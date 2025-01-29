@@ -1,5 +1,6 @@
 const {config} = require('dotenv').config({path:__dirname+'/./../../.env'})
 
+
 module.exports = {
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
