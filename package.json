@@ -13,6 +13,11 @@
 		"express-group-routes": "^1.1.0",
 		"http-errors": "~1.6.3",
 		"jade": "~1.11.0",
-		"morgan": "~1.9.1"
+		"migration": "^0.3.0",
+		"morgan": "~1.9.1",
+		"nodemon": "^3.1.9",
+		"pg": "^8.13.1",
+		"sequelize": "^6.37.5",
+		"sequelize-cli": "^6.6.2"
 	}
 }
