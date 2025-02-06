@@ -1,8 +1,6 @@
 const {Sequelize, Model, DataTypes} = require('sequelize');
-const connection = require('./index.js');
-
+const {sequelize} = require('./sequelize.js');
 class Project extends Model {}
-
 Project.init({
     id: {
         allowNull: false,
@@ -47,7 +45,7 @@ Project.init({
     }
     }, {
         timestamps: true,
-        sequelize: connection,
+        sequelize: sequelize,
         tableName: 'projects',
     }
 );

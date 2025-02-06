@@ -1,8 +1,6 @@
 const {Sequelize, Model, DataTypes} = require('sequelize');
-const connection = require('./index.js');
-
+const {sequelize} = require('./sequelize.js');
 class Profile extends Model {}
-
 Profile.init({
   id: {
     allowNull: false,
@@ -53,7 +51,7 @@ Profile.init({
   profile2_name_file:{
     type :DataTypes.STRING
   },
-  emai:{
+  email:{
     type :DataTypes.STRING
   },
   phone:{
@@ -61,8 +59,8 @@ Profile.init({
   }
 },{
   timestamps: true,
-  sequelize: connection,
-  tableName: 'profile'
+  sequelize: sequelize,
+  tableName: 'profiles'
 });
 
 module.exports = Profile;

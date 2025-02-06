@@ -52,7 +52,7 @@ module.exports = {
       profile2_name_file:{
         type :Sequelize.STRING
       },
-      emai:{
+      email:{
         type :Sequelize.STRING
       },
       phone:{
