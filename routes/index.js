@@ -17,6 +17,7 @@ app.group('/api/v1', (router) => {
 
   router.use('/users', user);
   router.use('/profile', require('./profile'));
+  router.use('/project', require('./project'));
 })
 
 module.exports = app;
