@@ -1,6 +1,6 @@
 const { Profile, Project } = require('../database/models/index')
 
-const getListProfile = async (req, res) => {
+const getListProfile = async (req, res, next) => {
 
     try {
        const getListProfile = await Profile.findAll()
