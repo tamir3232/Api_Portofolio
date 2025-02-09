@@ -14,7 +14,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       greeting: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       job_desk:{
         type :Sequelize.STRING

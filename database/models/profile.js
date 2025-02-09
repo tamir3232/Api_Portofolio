@@ -13,7 +13,7 @@ Profile.init({
     type: DataTypes.STRING
   },
   greeting: {
-    type: DataTypes.INTEGER
+    type: DataTypes.STRING
   },
   job_desk:{
     type :DataTypes.STRING
