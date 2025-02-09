@@ -56,6 +56,10 @@ Profile.init({
   },
   phone:{
     type :DataTypes.STRING
+  },
+  uniqueName:{
+    type :DataTypes.STRING,
+    unique: true
   }
 },{
   timestamps: true,

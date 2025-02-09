@@ -1,7 +1,6 @@
 const { Profile, Project } = require('../database/models/index')
 
 const getListProfile = async (req, res, next) => {
-
     try {
        const getListProfile = await Profile.findAll()
        if(!getListProfile || getListProfile.length === 0){
@@ -44,6 +43,39 @@ const getDetailProfile = async (req, res, next) => {
         next(error)
     }
 }
+
+const getDetailProfileByName = async (req, res, next) => {
+    try {
+
+        console.log("Halooo")
+        
+        const getProfile = await Profile.findOne({
+            where: {
+                uniqueName: req.body.name
+            }
+        })
+
+
+        if(!getProfile || getProfile.length === 0){
+           throw {
+                message: 'Data not found',
+                status: 404 
+           }
+        }
+
+        const getProject = await Project.findAll({
+            where: {
+                profile_id: getProfile.id
+            }
+        })
+        
+        return res.status(200).json({ message : "Data Berhasil Di dapatkan" , data: {profile: getProfile, projects: getProject}})
+
+    } catch (error) {
+        next(error)
+    }
+}
+
 
 const createProfile = async (req, res,next) => {
     const { name, greeting, job_desk, name_file, portofolio1_icon, portofolio1_link, portofolio2_icon, portofolio2_link, deskripsi, deskripsi_aboutme, experience, education, profile1_name_file, profile2_name_file, email, phone } = req.body
@@ -89,6 +121,7 @@ const deleteProfile = async (req, res) => {
 
 module.exports = {
     getDetailProfile,
+    getDetailProfileByName,
     getListProfile,
     createProfile,
     updateProfile,
